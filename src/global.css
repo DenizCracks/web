@@ -1,0 +1,105 @@
+:root {
+  --bg: #0a0a0b;
+  --surface: #141517;
+  --surface-hover: #1c1d20;
+  --border: #202124;
+  --text: #ecebe7;
+  --muted: #8a8a8c;
+  --dim: #5c5c5f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Poppins, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* full-page dotted field, only gently softened at the far edges */
+.dotfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.13) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse 100% 78% at 50% 46%, #000 55%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 100% 78% at 50% 46%, #000 55%, transparent 100%);
+}
+
+/* subtle vignette so the corners sit back */
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 75% 70% at 50% 45%, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+/* quiet buttons */
+.btn {
+  transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+}
+.btn:hover {
+  background: var(--surface-hover);
+  border-color: #2c2d31;
+  color: var(--text);
+}
+
+/* grouped social icons */
+.iconbtn {
+  color: var(--muted);
+  transition: color 0.16s ease, background 0.16s ease;
+}
+.iconbtn:hover {
+  color: var(--text);
+  background: var(--surface-hover);
+}
+
+/* footer legal links */
+.footlink {
+  color: var(--dim);
+  text-decoration: underline;
+  text-decoration-color: #2e2e31;
+  text-underline-offset: 3px;
+  transition: color 0.16s ease, text-decoration-color 0.16s ease;
+}
+.footlink:hover {
+  color: var(--muted);
+  text-decoration-color: var(--muted);
+}
+
+:focus-visible {
+  outline: 1px solid #4a4b4f;
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .wordmark {
+    font-size: 56px !important;
+  }
+  .cta-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+    max-width: 300px;
+  }
+  .ghost-glyph {
+    display: none !important;
+  }
+}
