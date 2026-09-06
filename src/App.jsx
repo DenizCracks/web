@@ -76,21 +76,22 @@ const BTN_BASE = {
   alignItems: 'center',
   justifyContent: 'center',
   gap: 9,
-  height: 52,
-  padding: '0 30px',
-  borderRadius: 10,
+  height: 51,
+  padding: '0 48px',
+  borderRadius: 11,
   border: `1px solid ${BORDER}`,
   background: SURFACE,
   color: MUTED,
-  fontSize: 20,
-  fontWeight: 450,
-  letterSpacing: '-0.01em',
+  fontSize: 19,
+  fontWeight: 400,
+  letterSpacing: '-0.005em',
 }
 
 export default function App() {
   return (
     <>
       <div className="dotfield" />
+      <div className="vignette" />
 
       <div
         style={{
@@ -103,7 +104,7 @@ export default function App() {
           padding: '24px',
         }}
       >
-        {/* centred stack */}
+        {/* stack sits a little above true centre */}
         <main
           style={{
             flex: 1,
@@ -112,55 +113,27 @@ export default function App() {
             alignItems: 'center',
             justifyContent: 'center',
             textAlign: 'center',
+            paddingBottom: '11vh',
           }}
         >
           <h1
             className="wordmark"
             style={{
               margin: 0,
-              fontSize: 88,
+              fontSize: 68,
               lineHeight: 1.05,
               fontWeight: 500,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.02em',
             }}
           >
             Deniz Loader
           </h1>
 
-          {/* buttons, with oversized faint glyphs bleeding behind them */}
+          {/* buttons, with large faint glyphs overlaying their outer edges */}
           <div style={{ position: 'relative', marginTop: 52 }}>
-            <span
-              className="ghost-glyph"
-              aria-hidden="true"
-              style={{
-                position: 'absolute',
-                left: 22,
-                top: -15,
-                color: '#ffffff',
-                opacity: 0.04,
-                pointerEvents: 'none',
-              }}
-            >
-              <IconKey size={82} />
-            </span>
-            <span
-              className="ghost-glyph"
-              aria-hidden="true"
-              style={{
-                position: 'absolute',
-                right: 22,
-                top: -15,
-                color: '#ffffff',
-                opacity: 0.04,
-                pointerEvents: 'none',
-              }}
-            >
-              <IconDownload size={82} />
-            </span>
-
             <div
               className="cta-row"
-              style={{ position: 'relative', display: 'flex', gap: 22, justifyContent: 'center' }}
+              style={{ position: 'relative', display: 'flex', gap: 19, justifyContent: 'center' }}
             >
               <a className="btn" href="#footer" style={BTN_BASE}>
                 Get a key
@@ -169,6 +142,37 @@ export default function App() {
                 Download
               </a>
             </div>
+
+            <span
+              className="ghost-glyph"
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                zIndex: 2,
+                left: -4,
+                top: -4,
+                color: '#ffffff',
+                opacity: 0.09,
+                pointerEvents: 'none',
+              }}
+            >
+              <IconKey size={58} />
+            </span>
+            <span
+              className="ghost-glyph"
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                zIndex: 2,
+                right: -4,
+                top: -4,
+                color: '#ffffff',
+                opacity: 0.09,
+                pointerEvents: 'none',
+              }}
+            >
+              <IconDownload size={58} />
+            </span>
           </div>
 
           {/* grouped social icons */}
@@ -176,8 +180,8 @@ export default function App() {
             style={{
               display: 'inline-flex',
               gap: 4,
-              marginTop: 40,
-              padding: 7,
+              marginTop: 24,
+              padding: 6,
               borderRadius: 10,
               border: `1px solid ${BORDER}`,
               background: SURFACE,
@@ -194,7 +198,7 @@ export default function App() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  width: 48,
+                  width: 52,
                   height: 36,
                   borderRadius: 7,
                 }}

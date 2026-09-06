@@ -21,7 +21,7 @@ body {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, sans-serif;
+  font-family: Poppins, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -30,16 +30,25 @@ a {
   text-decoration: none;
 }
 
-/* full-page dotted field, fading out towards the edges */
+/* full-page dotted field, only gently softened at the far edges */
 .dotfield {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.085) 1px, transparent 1px);
-  background-size: 26px 26px;
-  mask-image: radial-gradient(ellipse 62% 58% at 50% 45%, #000 25%, transparent 82%);
-  -webkit-mask-image: radial-gradient(ellipse 62% 58% at 50% 45%, #000 25%, transparent 82%);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.13) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse 100% 78% at 50% 46%, #000 55%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 100% 78% at 50% 46%, #000 55%, transparent 100%);
+}
+
+/* subtle vignette so the corners sit back */
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 75% 70% at 50% 45%, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
 }
 
 /* quiet buttons */
